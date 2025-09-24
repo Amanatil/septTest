@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://yf47jcx1xigp"]
+
+[ext_resource type="Texture2D" uid="uid://dxhb1bpd4wevc" path="res://Toca Assets/location_a.png" id="1_rabm1"]
+[ext_resource type="PackedScene" uid="uid://bsoiok3k3svy0" path="res://playerCamera.tscn" id="2_xocb0"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_rabm1")
+
+[node name="Node2D" parent="." instance=ExtResource("2_xocb0")]
+position = Vector2(1281, 755)
