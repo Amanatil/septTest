@@ -1,9 +1,58 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsoiok3k3svy0"]
+[gd_scene load_steps=7 format=3 uid="uid://bsoiok3k3svy0"]
 
 [ext_resource type="Script" uid="uid://ce16vfq2hrvvm" path="res://player_camera.gd" id="1_gggue"]
+[ext_resource type="Texture2D" uid="uid://bk8jekpgkw0kv" path="res://Toca Assets/buttons/button_sidewalk.png" id="3_4sbhc"]
+[ext_resource type="Texture2D" uid="uid://dacy3ml1jj4bh" path="res://Toca Assets/buttons/button_back.png" id="3_xqjqn"]
+[ext_resource type="Texture2D" uid="uid://52d36m0qpl88" path="res://Toca Assets/buttons/button_arrow.png" id="4_ovvv7"]
+[ext_resource type="Texture2D" uid="uid://da1bhmpdaj3jh" path="res://Toca Assets/buttons/button_x.png" id="5_w8m33"]
+[ext_resource type="Texture2D" uid="uid://004u5nf1j5pv" path="res://Toca Assets/buttons/button_check.png" id="6_jhc5n"]
 
-[node name="Node2D" type="Node2D"]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.45, 0.45)
+[node name="playerCamera" type="Camera2D"]
+zoom = Vector2(0.47, 0.47)
 script = ExtResource("1_gggue")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sidewalk" type="Button" parent="Node2D"]
+offset_left = 1188.0001
+offset_top = 633.0
+offset_right = 1556.0001
+offset_bottom = 1321.0
+scale = Vector2(0.35653234, 0.35653234)
+icon = ExtResource("3_4sbhc")
+icon_alignment = 2
+vertical_icon_alignment = 2
+
+[node name="Back" type="Button" parent="Node2D"]
+offset_left = -1338.0001
+offset_top = -741.00006
+offset_right = -1140.0001
+offset_bottom = -543.00006
+scale = Vector2(0.64944386, 0.64944386)
+icon = ExtResource("3_xqjqn")
+
+[node name="RightHandMenu" type="MenuButton" parent="Node2D"]
+offset_left = 1215.0
+offset_top = -745.0
+offset_right = 1364.0
+offset_bottom = -599.0
+scale = Vector2(0.99189633, 0.99189633)
+icon = ExtResource("4_ovvv7")
+
+[node name="Furniture" type="Button" parent="Node2D/RightHandMenu"]
+layout_mode = 0
+offset_left = -249.01782
+offset_top = 12.098022
+offset_right = 118.98218
+offset_bottom = 380.09802
+scale = Vector2(0.30867675, 0.30867675)
+icon = ExtResource("5_w8m33")
+
+[node name="Inventory" type="Button" parent="Node2D/RightHandMenu"]
+layout_mode = 0
+offset_left = -119.97217
+offset_top = 12.0980425
+offset_right = 78.02783
+offset_bottom = 210.09804
+scale = Vector2(0.57291925, 0.57291925)
+icon = ExtResource("6_jhc5n")

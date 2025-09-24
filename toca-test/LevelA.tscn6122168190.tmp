@@ -11,6 +11,5 @@ offset_bottom = 40.0
 texture = ExtResource("1_rabm1")
 
 [node name="Node2D" parent="." node_paths=PackedStringArray("bg") instance=ExtResource("2_xocb0")]
-position = Vector2(1368, 774)
-scale = Vector2(0.977, 0.977)
+position = Vector2(578, 328)
 bg = NodePath("../TextureRect")

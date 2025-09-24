@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctkjmkrqshx7k"]
+
+[ext_resource type="Texture2D" uid="uid://bk8jekpgkw0kv" path="res://Toca Assets/buttons/button_sidewalk.png" id="1_b3bc3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_left = -0.49800003
+anchor_top = -0.497
+anchor_right = 0.50200003
+anchor_bottom = 0.5
+offset_left = -0.30395508
+offset_top = 0.055999756
+offset_right = -0.3040161
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="Sidewalk" type="Button" parent="CanvasGroup"]
+offset_left = 201.0
+offset_top = 140.0
+offset_right = 569.0
+offset_bottom = 828.0
+scale = Vector2(0.13701698, 0.13701698)
+icon = ExtResource("1_b3bc3")
+icon_alignment = 2
+vertical_icon_alignment = 2
+
+[node name="Back" type="Button" parent="CanvasGroup"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="RightHandMenu" type="MenuButton" parent="CanvasGroup"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Furniture" type="Button" parent="CanvasGroup/RightHandMenu"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Inventory" type="Button" parent="CanvasGroup/RightHandMenu"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
