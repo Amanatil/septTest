@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://yf47jcx1xigp"]
+[gd_scene load_steps=4 format=3 uid="uid://yf47jcx1xigp"]
 
 [ext_resource type="Texture2D" uid="uid://dxhb1bpd4wevc" path="res://Toca Assets/location_a.png" id="1_rabm1"]
 [ext_resource type="PackedScene" uid="uid://bsoiok3k3svy0" path="res://playerCamera.tscn" id="2_xocb0"]
+[ext_resource type="PackedScene" uid="uid://dijfs0u1yrx2u" path="res://Resources/testItem.tscn" id="3_t32v3"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,7 +11,10 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_rabm1")
 
-[node name="Node2D" parent="." node_paths=PackedStringArray("bg") instance=ExtResource("2_xocb0")]
+[node name="playerCamera" parent="." node_paths=PackedStringArray("bg") instance=ExtResource("2_xocb0")]
 position = Vector2(1368, 774)
 scale = Vector2(0.977, 0.977)
 bg = NodePath("../TextureRect")
+
+[node name="testItem" parent="." instance=ExtResource("3_t32v3")]
+position = Vector2(1718, 959)

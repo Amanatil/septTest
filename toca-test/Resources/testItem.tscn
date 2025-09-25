@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dijfs0u1yrx2u"]
+
+[ext_resource type="Script" uid="uid://optla3kg6ut6" path="res://testItem.gd" id="1_yvrnt"]
+[ext_resource type="Resource" uid="uid://bba6un413y14d" path="res://Resources/testResource.tres" id="2_ci8gt"]
+[ext_resource type="Shader" uid="uid://ds323q34bgui1" path="res://furnitureShader.gdshader" id="3_pe1t8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mfgw8"]
+shader = ExtResource("3_pe1t8")
+shader_parameter/outline_color = Vector4(1, 1, 0, 1)
+shader_parameter/outline_size = 15.0
+shader_parameter/show_outline = true
+
+[node name="testItem" type="Node2D"]
+script = ExtResource("1_yvrnt")
+item_resource = ExtResource("2_ci8gt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_mfgw8")
