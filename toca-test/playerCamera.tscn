@@ -1,11 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsoiok3k3svy0"]
+[gd_scene load_steps=12 format=3 uid="uid://bsoiok3k3svy0"]
 
 [ext_resource type="Script" uid="uid://ce16vfq2hrvvm" path="res://player_camera.gd" id="1_gggue"]
 [ext_resource type="Texture2D" uid="uid://bk8jekpgkw0kv" path="res://Toca Assets/buttons/button_sidewalk.png" id="3_4sbhc"]
+[ext_resource type="Script" uid="uid://bm5pboa5o1647" path="res://sidewalkButton.gd" id="3_jhtgw"]
 [ext_resource type="Texture2D" uid="uid://dacy3ml1jj4bh" path="res://Toca Assets/buttons/button_back.png" id="3_xqjqn"]
 [ext_resource type="Texture2D" uid="uid://52d36m0qpl88" path="res://Toca Assets/buttons/button_arrow.png" id="4_ovvv7"]
+[ext_resource type="Script" uid="uid://d1vh6mj7btrw6" path="res://backButton.gd" id="5_8j2od"]
+[ext_resource type="Script" uid="uid://dyetsiut67mvv" path="res://right_hand_menu.gd" id="5_jhc5n"]
 [ext_resource type="Texture2D" uid="uid://da1bhmpdaj3jh" path="res://Toca Assets/buttons/button_x.png" id="5_w8m33"]
 [ext_resource type="Texture2D" uid="uid://004u5nf1j5pv" path="res://Toca Assets/buttons/button_check.png" id="6_jhc5n"]
+[ext_resource type="Script" uid="uid://dj5262yvp1qwt" path="res://furnitureButton.gd" id="7_ekk11"]
+[ext_resource type="Script" uid="uid://6iiuv80ej2i" path="res://inventoryButton.gd" id="9_bgfv3"]
 
 [node name="playerCamera" type="Camera2D"]
 zoom = Vector2(0.47, 0.47)
@@ -22,6 +27,7 @@ scale = Vector2(0.35653234, 0.35653234)
 icon = ExtResource("3_4sbhc")
 icon_alignment = 2
 vertical_icon_alignment = 2
+script = ExtResource("3_jhtgw")
 
 [node name="Back" type="Button" parent="Node2D"]
 offset_left = -1338.0001
@@ -30,29 +36,47 @@ offset_right = -1140.0001
 offset_bottom = -543.00006
 scale = Vector2(0.64944386, 0.64944386)
 icon = ExtResource("3_xqjqn")
+script = ExtResource("5_8j2od")
 
-[node name="RightHandMenu" type="MenuButton" parent="Node2D"]
+[node name="RightHandMenu" type="Button" parent="Node2D"]
 offset_left = 1215.0
 offset_top = -745.0
-offset_right = 1364.0
-offset_bottom = -599.0
+offset_right = 1365.0
+offset_bottom = -595.0
 scale = Vector2(0.99189633, 0.99189633)
+pivot_offset = Vector2(75, 75)
+toggle_mode = true
 icon = ExtResource("4_ovvv7")
+script = ExtResource("5_jhc5n")
 
 [node name="Furniture" type="Button" parent="Node2D/RightHandMenu"]
+visible = false
 layout_mode = 0
-offset_left = -249.01782
-offset_top = 12.098022
-offset_right = 118.98218
-offset_bottom = 380.09802
+offset_left = -371.61926
+offset_top = -115.544136
+offset_right = -3.6192627
+offset_bottom = 252.45587
 scale = Vector2(0.30867675, 0.30867675)
+pivot_offset = Vector2(184, 184)
+toggle_mode = true
 icon = ExtResource("5_w8m33")
+script = ExtResource("7_ekk11")
 
 [node name="Inventory" type="Button" parent="Node2D/RightHandMenu"]
+visible = false
 layout_mode = 0
-offset_left = -119.97217
-offset_top = 12.0980425
-offset_right = 78.02783
-offset_bottom = 210.09804
+offset_left = -162.9281
+offset_top = -29.84967
+offset_right = 35.0719
+offset_bottom = 168.15033
 scale = Vector2(0.57291925, 0.57291925)
+pivot_offset = Vector2(99, 99)
+toggle_mode = true
 icon = ExtResource("6_jhc5n")
+script = ExtResource("9_bgfv3")
+
+[connection signal="pressed" from="Node2D/Sidewalk" to="Node2D/Sidewalk" method="_on_pressed"]
+[connection signal="pressed" from="Node2D/Back" to="Node2D/Back" method="_on_pressed"]
+[connection signal="toggled" from="Node2D/RightHandMenu" to="Node2D/RightHandMenu" method="_on_toggled"]
+[connection signal="toggled" from="Node2D/RightHandMenu/Furniture" to="Node2D/RightHandMenu/Furniture" method="_on_toggled"]
+[connection signal="toggled" from="Node2D/RightHandMenu/Inventory" to="Node2D/RightHandMenu/Inventory" method="_on_toggled"]

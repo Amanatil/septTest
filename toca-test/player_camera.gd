@@ -19,15 +19,20 @@ func _ready():
 
 	# Get viewport size in pixels
 	var viewport_size = get_viewport_rect().size
-	var zoomed_viewport_width = viewport_size.x * zoom.x
-
+	var zoomed_viewport_width = viewport_size.x
+	print("Viewport width: ", zoomed_viewport_width)
 	# Background left and right edges in world coordinates
 	var bg_left = bg.position.x
 	var bg_right = bg.position.x + bg.size.x  # TextureRect uses rect_size for width/height
-
+	print("left: ", bg_left)
+	print("right ", bg_right)
+	
 	# Correctly compute horizontal camera limits
-	min_x = bg_left + zoomed_viewport_width / 2
-	max_x = bg_right - zoomed_viewport_width / 2
+	# I honestly don't know why the extra 80 pixels is necessary here, but it is. Otherwise a grey border keeps showing
+	min_x = bg_left + zoomed_viewport_width + 80.0
+	max_x = bg_right - zoomed_viewport_width - 80.0 
+	print("min X: ", min_x)
+	print("max X: ", max_x)
 
 	# Scale UI elements to match zoom
 	update_ui_scale()
