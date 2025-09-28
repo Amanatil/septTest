@@ -4,6 +4,8 @@ var furnitureMode = false
 var inventoryMode = false
 signal furnitureModeSignal(toggle)
 signal inventoryModeSignal(toggle)
+
+var item_is_dragged = false
 # signal for Furniture mode
 # signal for Inventory mode
 

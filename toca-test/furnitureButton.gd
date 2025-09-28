@@ -16,5 +16,5 @@ func animate():
 	# Create a new tween every time you press
 	var tween = create_tween()
 	# Shrink, then expand back
-	tween.tween_property(self, "scale", Vector2(scale*0.8), 0.1)
-	tween.tween_property(self, "scale", Vector2(scale), 0.1)
+	tween.tween_property(self, "scale", Vector2(originalScale*0.8), 0.1)
+	tween.tween_property(self, "scale", Vector2(originalScale), 0.1)

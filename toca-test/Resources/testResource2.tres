@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=3 format=3 uid="uid://c27l3jx2fc4wn"]
+
+[ext_resource type="Script" uid="uid://br5jlt3ov6aci" path="res://baseResource.gd" id="1_0fcxh"]
+[ext_resource type="Texture2D" uid="uid://dacy3ml1jj4bh" path="res://Toca Assets/buttons/button_back.png" id="2_262xc"]
+
+[resource]
+script = ExtResource("1_0fcxh")
+name = "TestItem2"
+texture = ExtResource("2_262xc")
+metadata/_custom_type_script = "uid://br5jlt3ov6aci"

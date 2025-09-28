@@ -44,7 +44,7 @@ func _input(event):
 		if dragging:
 			last_mouse_pos = event.position
 
-	elif event is InputEventMouseMotion and dragging:
+	elif event is InputEventMouseMotion and dragging and GlobalStateManager.item_is_dragged == false:
 		var delta = event.position - last_mouse_pos
 		var new_x = position.x - delta.x * drag_sensitivity
 		position.x = clamp(new_x, min_x, max_x)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bsoiok3k3svy0"]
+[gd_scene load_steps=14 format=3 uid="uid://bsoiok3k3svy0"]
 
 [ext_resource type="Script" uid="uid://ce16vfq2hrvvm" path="res://player_camera.gd" id="1_gggue"]
 [ext_resource type="Texture2D" uid="uid://bk8jekpgkw0kv" path="res://Toca Assets/buttons/button_sidewalk.png" id="3_4sbhc"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://004u5nf1j5pv" path="res://Toca Assets/buttons/button_check.png" id="6_jhc5n"]
 [ext_resource type="Script" uid="uid://dj5262yvp1qwt" path="res://furnitureButton.gd" id="7_ekk11"]
 [ext_resource type="Script" uid="uid://6iiuv80ej2i" path="res://inventoryButton.gd" id="9_bgfv3"]
+[ext_resource type="Script" uid="uid://lg38msev2ctk" path="res://inventory_ui.gd" id="12_8mje4"]
+[ext_resource type="PackedScene" uid="uid://b86hm1dnrybs5" path="res://inventorySlot.tscn" id="13_2vhyp"]
 
 [node name="playerCamera" type="Camera2D"]
 zoom = Vector2(0.47, 0.47)
@@ -74,6 +76,36 @@ pivot_offset = Vector2(99, 99)
 toggle_mode = true
 icon = ExtResource("6_jhc5n")
 script = ExtResource("9_bgfv3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InventoryUI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("12_8mje4")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/InventoryUI"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="inventorySlot" parent="CanvasLayer/InventoryUI/GridContainer" instance=ExtResource("13_2vhyp")]
+layout_mode = 2
+
+[node name="inventorySlot2" parent="CanvasLayer/InventoryUI/GridContainer" instance=ExtResource("13_2vhyp")]
+layout_mode = 2
+
+[node name="inventorySlot3" parent="CanvasLayer/InventoryUI/GridContainer" instance=ExtResource("13_2vhyp")]
+layout_mode = 2
+
+[node name="inventorySlot4" parent="CanvasLayer/InventoryUI/GridContainer" instance=ExtResource("13_2vhyp")]
+layout_mode = 2
 
 [connection signal="pressed" from="Node2D/Sidewalk" to="Node2D/Sidewalk" method="_on_pressed"]
 [connection signal="pressed" from="Node2D/Back" to="Node2D/Back" method="_on_pressed"]
