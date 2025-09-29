@@ -8,4 +8,5 @@ script = ExtResource("1_dlupx")
 name = "Test Item"
 texture = ExtResource("2_fbkt4")
 size_tag = 1
+furniture_tag = 1
 metadata/_custom_type_script = "uid://br5jlt3ov6aci"

@@ -24,5 +24,9 @@ position = Vector2(1150, 1239)
 position = Vector2(278, 1215)
 
 [node name="testItem2" parent="." instance=ExtResource("3_t32v3")]
-position = Vector2(2478, 1191)
+position = Vector2(2420, 893)
+item_resource = ExtResource("4_1s1wt")
+
+[node name="testItem4" parent="." instance=ExtResource("3_t32v3")]
+position = Vector2(1832, 613)
 item_resource = ExtResource("4_1s1wt")
